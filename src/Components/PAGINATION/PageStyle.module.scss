@@ -1,0 +1,47 @@
+@import "../../../scss/abstract/mixins";
+@import "../../../scss/abstract/colors";
+
+.main {
+  width: 15rem;
+  @include flex();
+
+  & .container {
+    width: 10rem;
+    @include flex();
+    & button {
+      @include button($bg: $btn-color-2);
+    }
+    & .current-page {
+      @include button($c: $whatsapp-color, $bg: $background-color,$p:.8rem,$fs:1.1rem);
+    }
+
+    @media (max-width: 480px) {
+      @include flex($fd: column);
+
+      & button {
+        font-size: 0.8rem;
+      }
+      & .current-page {
+        @include button($c: $whatsapp-color, $bg: $background-color,$p:.4rem,$fs:1rem);
+      }
+    }
+
+    @media (min-width:768px){
+        & button {
+            font-size: x-large;
+            width: 100%;
+        }
+        button:has(span) {
+            @include flex();
+            font-size: x-large;
+            width: 100%;
+          }
+    }
+  }
+}
+
+// @media (max-width: 768px) {
+//     button:has(span) {
+//       display: none;
+//     }
+//   }
