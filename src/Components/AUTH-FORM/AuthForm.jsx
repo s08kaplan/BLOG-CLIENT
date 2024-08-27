@@ -37,7 +37,7 @@ const AuthForm = ({ formType, schema }) => {
   };
 
   const onSubmit = (data) => {
-    console.log("submit data", data);
+    // console.log("submit data", data);
     formType == "register"
       ? dispatch(registerUser(data))
       : dispatch(login(data));

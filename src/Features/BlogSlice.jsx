@@ -34,7 +34,7 @@ const BlogSlice = createSlice({
     getSingleData: (state, { payload }) => {
       state.loading = false;
       state.error = false;
-      console.log(payload);
+      // console.log(payload);
       if(payload.data && typeof payload.data == "object" && "updatedData" in payload.data)
         { state[payload.url] =  payload.data.updatedData}
       else {

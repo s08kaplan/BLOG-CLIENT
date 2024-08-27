@@ -57,7 +57,7 @@ console.log(inputs);
       content: sanitizedContent,
       // categories: categoryId
     };
-    console.log(postData);
+    // console.log(postData);
     blogId ? putBlog("blogDetail",blogId, postData) : postBlog("blogs", postData)
     setInputs({ title: "", image: "", categoryId: "", isPublish: "" });
     onClose()

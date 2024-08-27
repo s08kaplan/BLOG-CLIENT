@@ -24,7 +24,7 @@ const useAuthCalls = () => {
       navigate("/");
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -32,12 +32,12 @@ const useAuthCalls = () => {
     dispatch(fetchStart());
     try {
       const { data } = await axiosPublic.post("auth/login", userInfo);
-      console.log(data.user);
+      // console.log(data.user);
       dispatch(loginSuccess(data));
       navigate("/blogs");
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -48,21 +48,21 @@ const useAuthCalls = () => {
       navigate("/");
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
   const updatedUser = async (userId, info) => {
-    console.log(userId);
-    console.log(info);
+    // console.log(userId);
+    // console.log(info);
     try {
       const { data } = await axiosWithToken.put(`users/${userId}`, info);
-      console.log(data.updatedData);
+      // console.log(data.updatedData);
       dispatch(updateUserInfo(data.updatedData));
       navigate("/my-profile");
     } catch (error) {
       dispatch(fetchFail());
-      console.log(error);
+      // console.log(error);
     }
   };
 

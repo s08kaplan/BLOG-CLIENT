@@ -11,12 +11,12 @@ const NewBlog = () => {
   const location = useLocation()
   const { from } = location.state || {}
 
-  console.log(from);
+  // console.log(from);
   const postBlog = async (url, postData) => {
     try {
       const { data } = await axiosWithToken.post(`${url}/`, postData);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

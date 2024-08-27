@@ -32,14 +32,14 @@ const Categories = () => {
   // console.log(user);
 
   const handleClick = useCallback( async (categoryId) => {
-    console.log(categoryId);
+    // console.log(categoryId);
     setCategoryId(categoryId);
     try {
       const data = await getCategoryById("categoryDetail", categoryId);
       // console.log(data);
       navigate(`/category-detail/${categoryId}`);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   },[categoryId]);
 
@@ -48,16 +48,16 @@ const Categories = () => {
   };
 
   const addCategory = async () => {
-    console.log(categoryName);
+    // console.log(categoryName);
 
     const postData = { name: debouncedName };
     try {
       const data = await axiosWithToken.post("categories", postData);
-    console.log(data);
+    // console.log(data);
     getData("categories");
     setCategoryName("");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch(fetchFail(error))
     }
     
@@ -67,18 +67,18 @@ const Categories = () => {
     setEdit(true);
     setCategoryName(name);
     setCategoryId(id);
-    console.log(id);
-    console.log(name);
+    // console.log(id);
+    // console.log(name);
   };
 
   const handleEdit = async () => {
     const postData = { categoryId, name: categoryName };
-    console.log(postData);
+    // console.log(postData);
     const { data } = await axiosWithToken.put(
       `categories/${categoryId}`,
       postData
     );
-    console.log(data);
+    // console.log(data);
     getData("categories");
     setEdit(false);
     setCategoryName("");

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useMemo } from "react";
 import { useSelector } from "react-redux";
 import useAuthCalls from "../../Custom-hooks/useAuthCalls";
 import DOMPurify from "dompurify";
@@ -36,13 +36,13 @@ const MyProfile = () => {
     getData("blogs");
   }, []);
 
-  const userBlogs = blogs?.filter((blog) => blog.userId._id == user?.id);
+  const userBlogs =useMemo(() =>  blogs?.filter((blog) => blog.userId._id == user?.id), [blogs]);
 
-  console.log(userBlogs);
+  // console.log(userBlogs);
 
   // console.log(user);
   // console.log(blogs);
-  console.log(details);
+  // console.log(details);
 
   const handleForm = (e) => {
     const { name, value } = e.target;
@@ -103,7 +103,7 @@ const MyProfile = () => {
     const page = e.target.textContent;
     getData("blogs", page);
   };
-  console.log(details?.pages?.total_pages);
+  // console.log(details?.pages?.total_pages);
   return (
     <main className={style.main}>
       <section className={style["profile-header"]}>

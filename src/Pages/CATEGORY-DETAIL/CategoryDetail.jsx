@@ -24,7 +24,7 @@ const CategoryDetail = () => {
         blog?.categoryId?._id.toString() == categoryDetail?._id?.toString()
     );
   },[blogs, categoryId]);
-  console.log(detail);
+  // console.log(detail);
   return (
     <div className={style.main}>
       <div className={style.container}>

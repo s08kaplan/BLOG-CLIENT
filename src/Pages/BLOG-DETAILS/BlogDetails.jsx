@@ -70,7 +70,7 @@ const BlogDetails = () => {
       // console.log(data);
       setLikeStatus(data);
     } catch (error) {
-      console.log("postLike error", error);
+      // console.log("postLike error", error);
     }
   };
 
@@ -113,7 +113,7 @@ const BlogDetails = () => {
     setShow((prev) => !prev)
   }
 
-  console.log(blogDetail);
+  // console.log(blogDetail);
   // console.log(blogDetail?.totalLikes);
   return (
     <section className={style.main}>

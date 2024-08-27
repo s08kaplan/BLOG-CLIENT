@@ -16,12 +16,12 @@ const  debouncedValue  = useDebounce(editComment)
 
  const handleEdit =  () => {
   // console.log(editComment);
-  console.log(debouncedValue);
+  // console.log(debouncedValue);
 
   // const sanitizedContent = DOMPurify.sanitize(editComment, { USE_PROFILES: { html: true } });
   const sanitizedContent = DOMPurify.sanitize(debouncedValue, { USE_PROFILES: { html: true } });
   const content = sanitizedContent
-  console.log(content);
+  // console.log(content);
   const editCommentData = {
     content,blogId,userId
   }
@@ -32,7 +32,7 @@ const  debouncedValue  = useDebounce(editComment)
  }
 
   // console.log(editComment);
-  console.log(debouncedValue);
+  // console.log(debouncedValue);
   return (
     <main style={{marginTop:"1rem"}}>
       <div>

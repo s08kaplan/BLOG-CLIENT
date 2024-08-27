@@ -32,7 +32,7 @@ const useBlogData = () => {
       );
     } catch (error) {
       dispatch(fetchFail());
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -45,11 +45,11 @@ const useBlogData = () => {
           (page - 1) * 4
         }&sort[createdAt]=desc&page=${page}`
       );
-      console.log(data);
+      // console.log(data);
       dispatch(getSingleData({ data, url }));
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -63,7 +63,7 @@ const useBlogData = () => {
       dispatch(getSingleData({ data, url }));
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -80,7 +80,7 @@ const useBlogData = () => {
       dispatch(getSingleData({ data, url }));
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -95,8 +95,8 @@ const useBlogData = () => {
   };
 
   const getComment = async (url, blogId) => {
-    console.log("getComment", url);
-    console.log("getComment", blogId);
+    // console.log("getComment", url);
+    // console.log("getComment", blogId);
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.get(`blogs/${blogId}`);
@@ -104,27 +104,27 @@ const useBlogData = () => {
       dispatch(getSingleData({ data, url }));
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
   const updateComment = async (url, commentId, blogId, updateData) => {
-    console.log("updateComment", url);
-    console.log("updateComment", commentId);
-    console.log(updateData);
+    // console.log("updateComment", url);
+    // console.log("updateComment", commentId);
+    // console.log(updateData);
     dispatch(fetchStart());
     try {
       await axiosWithToken.put(`comments/${commentId}`, updateData);
       await getComment("blogDetail", blogId);
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
   const deleteComment = async (commentId, blogId) => {
-    console.log(commentId);
-    console.log(blogId);
+    // console.log(commentId);
+    // console.log(blogId);
     dispatch(fetchStart());
     try {
       const { data } = await axiosWithToken.delete(`comments/${commentId}`);
@@ -132,7 +132,7 @@ const useBlogData = () => {
       getComment("blogDetail", blogId);
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -147,7 +147,7 @@ const useBlogData = () => {
       dispatch(getSingleData({ data, url }));
     } catch (error) {
       dispatch(fetchFail(error));
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -160,7 +160,7 @@ const useBlogData = () => {
       // console.log(data)
       dispatch(getSingleData({ url, data }));
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch(fetchFail(error));
     }
   };
