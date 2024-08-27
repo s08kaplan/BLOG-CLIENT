@@ -16,7 +16,7 @@ $container-padding: 20px;
 .container {
   @include flex();
   flex-wrap: wrap;
-  max-width: 1200px;
+  // max-width: 1200px;
   width: 100%;
 }
 
