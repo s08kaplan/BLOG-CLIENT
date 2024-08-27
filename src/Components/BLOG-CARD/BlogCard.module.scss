@@ -56,6 +56,7 @@ $container-padding: 20px;
 }
 
 .detail-container {
+  @include flex($fd:column);
   background-color: $background-color;
   padding: 20px;
   margin: 10px 0;
