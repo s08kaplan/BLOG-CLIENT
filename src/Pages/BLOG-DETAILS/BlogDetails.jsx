@@ -106,7 +106,8 @@ const BlogDetails = () => {
   // console.log("blogDetail?.comments",blogDetail?.comments);
 
   const handleCommentEdit = (id) => {
-    setCommentModal((prev) => !prev);
+    // setCommentModal((prev) => !prev);
+    setCommentModal(true);
     const check = blogDetail?.comments.filter((comment) => comment._id == id);
 
     setEditComment(check[0].content);
