@@ -79,8 +79,18 @@ const BlogDetails = () => {
       USE_PROFILES: { html: true },
     });
     const content = sanitizedContent;
-   content !=="" && await postComment("comments", content, blogId);
-    setComment("");
+    const innerElement = ["h1", "h2", "h3", "h4", "h5", "h6", "p"];
+    const isEmptyContent = innerElement.some((tag) => {
+      const emptyTagPattern = new RegExp(
+        `<${tag}><br></${tag}>|<${tag}>\\s*</${tag}>`,
+        "i"
+      );
+      return emptyTagPattern.test(content);
+    });
+    if (!isEmptyContent) {
+      await postComment("comments", content, blogId);
+      setComment("");
+    }
   };
 
   const handleDelete = () => {
