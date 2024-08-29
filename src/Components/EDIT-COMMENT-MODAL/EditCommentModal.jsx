@@ -1,7 +1,7 @@
 import React from "react";
-import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import useDebounce from "../../Custom-hooks/useDebounce";
+import QuillEditor from "../QUILL/QuillEditor";
 import style from "../../Pages/BLOG-DETAILS/BlogDetails.module.scss"
 
 const EditCommentModal = ({ editComment, setEditComment, onClose,id, blogId, userId, updateComment }) => {
