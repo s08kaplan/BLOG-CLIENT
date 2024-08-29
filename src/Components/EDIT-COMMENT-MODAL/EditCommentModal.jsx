@@ -35,15 +35,9 @@ const  debouncedValue  = useDebounce(editComment)
   // console.log(debouncedValue);
   return (
     <main style={{marginTop:"1rem"}}>
-      <div>
-        <ReactQuill
-          //   className={detailStyle.quill}
-          theme="snow"
-          value={editComment}
-          onChange={setEditComment}
-          modules={modules}
-        />
-      </div>
+     <section>
+        <QuillEditor value={editComment} onChange={setEditComment} />
+      </section>
       <button className={style.button} onClick={handleEdit} style={{ margin:"1rem auto"}}>Submit</button>
       <button className={style.button} onClick={()=> onClose()} style={{ margin:"1rem",backgroundColor:"red"}}>Cancel</button>
     </main>

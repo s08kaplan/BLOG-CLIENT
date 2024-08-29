@@ -5,13 +5,13 @@ import useBlogData from "../../Custom-hooks/useBlogData";
 import { LiaHeart } from "react-icons/lia";
 import { FaTrashAlt } from "react-icons/fa";
 import useAxios from "../../Custom-hooks/useAxios";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import DOMPurify from "dompurify";
 import { VscEdit } from "react-icons/vsc";
 import BlogModal from "../../Components/BLOG-MODAL/BlogModal";
 import BlogPost from "../../Components/BLOG-POST/BlogPost";
 import EditCommentModal from "../../Components/EDIT-COMMENT-MODAL/EditCommentModal";
+import QuillEditor from "../../Components/QUILL/QuillEditor";
 import style from "./BlogDetails.module.scss";
 
 const BlogDetails = () => {
@@ -203,12 +203,10 @@ const BlogDetails = () => {
         </section>
       )}
       {show && !commentModal && (
-        <ReactQuill
-          className={style.quill}
-          theme="snow"
-          value={comment}
-          onChange={setComment}
-        />
+           <QuillEditor
+           value={comment}
+           onChange={setComment}
+         />
       )}
       {show && !commentModal && (
         <button className={style.button} onClick={handleComment}>
