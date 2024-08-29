@@ -231,7 +231,7 @@ const BlogDetails = () => {
           onClose={setEditBlogModal}
         />
       )}
-      {commentModal && (
+      {commentModal && show && (
         <EditCommentModal
           setEditComment={setEditComment}
           editComment={editComment}
