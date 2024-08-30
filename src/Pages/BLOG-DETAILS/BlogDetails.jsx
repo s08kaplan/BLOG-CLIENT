@@ -158,7 +158,7 @@ const BlogDetails = () => {
               )}
             </div>
             <div className={style["info-right"]}>
-              <span>
+              <span style={{color:"black"}}>
                 {new Date(blogDetail?.createdAt).toLocaleDateString()}
               </span>
 
