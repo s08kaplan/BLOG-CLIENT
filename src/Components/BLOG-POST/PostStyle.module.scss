@@ -2,7 +2,7 @@
 
 .post {
    width: 100%;
-   @include flex($fd:column);
+   @include flex($fd:column,$jc:center,$ai:"center");
    text-wrap: balance;
    color: $text-color-2 !important;
 }
