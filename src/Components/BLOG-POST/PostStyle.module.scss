@@ -1,8 +1,12 @@
 @import "../../../scss/abstract/mixins";
 
 .post {
-   width: 100%;
-   @include flex($fd:column,$jc:center,$ai:"center");
-   text-wrap: balance;
-   color: $text-color-2 !important;
+   color:$text-color-2 !important;
+  & p,h1,h2,h3,h4,h5,h6 {
+     white-space: pre-wrap;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     min-height: 100px;
+     box-sizing: border-box;
+  }
 }
