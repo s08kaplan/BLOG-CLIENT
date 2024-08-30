@@ -71,7 +71,9 @@
       }
       & .info-right {
         @include flex();
-
+       & .date {
+        color: $text-color-2;
+       }
       }
       @media (max-width:821px) {
         & {
