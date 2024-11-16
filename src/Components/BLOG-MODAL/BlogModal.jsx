@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import DOMPurify from "dompurify";
 import useBlogData from "../../Custom-hooks/useBlogData";
 import { useNavigate } from "react-router-dom";
-import style from "./BlogModal.module.scss";
 import QuillEditor from "../QUILL/QuillEditor";
+import style from "./BlogModal.module.scss";
 
 const BlogModal = ({
   title,
@@ -51,12 +51,13 @@ console.log(inputs);
   const handleSubmit =  (e) => {
     e.preventDefault();
     const sanitizedContent = DOMPurify.sanitize(text, { USE_PROFILES: { html: true } });
+    // console.log(quillRef.current.value);
     const postData = {
       ...inputs,
       content: sanitizedContent,
       // categories: categoryId
     };
-    // console.log(postData);
+    console.log(postData);
     blogId ? putBlog("blogDetail",blogId, postData) : postBlog("blogs", postData)
     setInputs({ title: "", image: "", categoryId: "", isPublish: "" });
     onClose()
@@ -90,7 +91,7 @@ const handleClose = () => {
             </section>
             <section  className={style.quill}>
               <label htmlFor="content">Content</label>
-              <QuillEditor value={content} />
+              <QuillEditor  value={content} onChange={setText} />
             </section>
             <section className={style["input-group"]}>
               <label htmlFor="image">Image Url</label>
