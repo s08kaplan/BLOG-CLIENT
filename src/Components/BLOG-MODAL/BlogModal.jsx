@@ -30,8 +30,8 @@ const BlogModal = ({
     isPublish,
     userId: user?.id,
   });
-  // const [text, setText] = useState(content);
-  const quillRef = useRef("")
+  const [text, setText] = useState(content);
+  // const quillRef = useRef("")
 
   useEffect(() => {
     getData("categories");
@@ -50,8 +50,7 @@ const BlogModal = ({
 console.log(inputs);
   const handleSubmit =  (e) => {
     e.preventDefault();
-    const sanitizedContent = DOMPurify.sanitize(quillRef.current.value, { USE_PROFILES: { html: true } });
-    console.log(quillRef.current.value);
+    const sanitizedContent = DOMPurify.sanitize(text, { USE_PROFILES: { html: true } });
     const postData = {
       ...inputs,
       content: sanitizedContent,
