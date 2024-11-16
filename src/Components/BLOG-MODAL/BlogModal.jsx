@@ -90,7 +90,7 @@ const handleClose = () => {
             </section>
             <section  className={style.quill}>
               <label htmlFor="content">Content</label>
-              <QuillEditor value={content} ref={quillRef} />
+              <QuillEditor value={content} />
             </section>
             <section className={style["input-group"]}>
               <label htmlFor="image">Image Url</label>
